@@ -1,5 +1,24 @@
 @import "tailwindcss";
 
+@layer components {
+  .line_left {
+    @apply 
+      after:content-[''] after:absolute after:left-0.5 after:top-0 
+      after:w-[2px] after:h-full 
+      after:bg-gradient-to-b after:from-[#E03609] after:to-[#F0B71F]
+      z-[100];
+  }
+
+  .line_right {
+    @apply 
+      before:content-[''] before:absolute before:right-0 before:top-0
+      before:w-[2px] before:h-full
+      before:bg-gradient-to-t before:from-[#E03609] before:to-[#F0B71F]
+      z-[100];
+  }
+}
+
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -24,3 +43,11 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.dive{
+  background-image: url(/diveone.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  
+} 
