@@ -25,8 +25,6 @@ const Navbar = () => {
 
         {/* TOP BAR */}
         <div className="flex items-center justify-between">
-
-          {/* LOGO */}
           <img
             src="/logo.png"
             alt="Logo"
@@ -44,8 +42,6 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
-
-          {/* DESKTOP RIGHT */}
           <div className="hidden md:flex items-center gap-6">
 
             {/* TOGGLE */}

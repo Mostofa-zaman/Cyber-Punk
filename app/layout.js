@@ -24,11 +24,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable}  ${orbitron.variable} antialiased h-full relative`}
+        className={`${geistSans.variable} ${geistMono.variable} ${orbitron.variable} antialiased h-full relative`}
       >
-        <div className="container h-full absolute left-1/2 top-0 -translate-x-1/2 line_left line_right ">
-
+        {/* pointer-events-none যোগ করা হয়েছে যাতে এটি ক্লিক ব্লক না করে */}
+        <div className="container h-full absolute left-1/2 top-0 -translate-x-1/2 line_left line_right pointer-events-none">
         </div>
+        
+        {/* মেনু বা নেভবার এখানে থাকবে */}
         {children}
       </body>
     </html>

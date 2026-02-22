@@ -6,7 +6,7 @@
       after:content-[''] after:absolute after:left-0.5 after:top-0 
       after:w-[2px] after:h-full 
       after:bg-gradient-to-b after:from-[#E03609] after:to-[#F0B71F]
-      z-[100];
+      z-[10]; /* ১০০ থেকে কমিয়ে ১০ করে দিন */
   }
 
   .line_right {
@@ -14,7 +14,7 @@
       before:content-[''] before:absolute before:right-0 before:top-0
       before:w-[2px] before:h-full
       before:bg-gradient-to-t before:from-[#E03609] before:to-[#F0B71F]
-      z-[100];
+      z-[10]; /* ১০০ থেকে কমিয়ে ১০ করে দিন */
   }
 }
 
