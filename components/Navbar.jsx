@@ -1,6 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { HiOutlineMenuAlt3 } from "react-icons/hi";
+import { IoClose } from "react-icons/io5";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -8,10 +10,19 @@ const Navbar = () => {
 
   const navItems = ["Home", "Pages", "Support", "Contact"];
 
+  /* 🔥 Scroll Lock */
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [open]);
+
   return (
-    <section className="bg-[#0B0B0B] sticky top-0 z-50">
+    <section className="bg-[#0B0B0B] sticky top-0 z-50 relative">
       <div className="max-w-[1320px] mx-auto py-5 px-4">
-        
+
         {/* TOP BAR */}
         <div className="flex items-center justify-between">
 
@@ -19,7 +30,7 @@ const Navbar = () => {
           <img
             src="/logo.png"
             alt="Logo"
-            className="cursor-pointer w-28 sm:w-32 md:w-auto"
+            className="cursor-pointer w-28 sm:w-32"
           />
 
           {/* DESKTOP MENU */}
@@ -59,20 +70,19 @@ const Navbar = () => {
 
           {/* MOBILE BUTTON */}
           <button
-            aria-label="Menu"
             className="md:hidden text-white text-3xl"
             onClick={() => setOpen(!open)}
           >
-            {open ? "✕" : "☰"}
+            {open ? <IoClose /> : <HiOutlineMenuAlt3 />}
           </button>
         </div>
       </div>
 
       {/* MOBILE MENU */}
       <div
-        className={`md:hidden absolute left-0 top-full w-full bg-[#111] text-white z-40
+        className={`md:hidden absolute left-0 top-full w-full bg-[#111] text-white z-[60]
         transition-all duration-300 ease-in-out overflow-hidden
-        ${open ? "max-h-[400px] py-6" : "max-h-0 py-0"}`}
+        ${open ? "max-h-[500px] py-6 opacity-100" : "max-h-0 py-0 opacity-0"}`}
       >
         <div className="px-6 flex flex-col gap-6">
 
@@ -114,7 +124,7 @@ const Navbar = () => {
       {/* OVERLAY */}
       {open && (
         <div
-          className="fixed inset-0 bg-black/50 md:hidden z-30"
+          className="fixed inset-0 bg-black/50 md:hidden z-[50]"
           onClick={() => setOpen(false)}
         />
       )}
